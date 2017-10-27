@@ -1,8 +1,8 @@
-var Login = React.createClass({
+var SideMenu = React.createClass({
   render: function() {
     return (
       <div>
-        <p>Hi there {this.props.name}</p>
+        <p>This is the side menu</p>
       </div>
     )
   }
