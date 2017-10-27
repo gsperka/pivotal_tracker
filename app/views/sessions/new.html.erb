@@ -1,12 +1,15 @@
-<h1>Login</h1>
+<div class="login-section">
+	<h1>Welcome to Pivotal Review Tracker 2.0</h1>
+	<p>Please sign in below</p>
 
-<%= form_tag '/login' do %>
-
-  Email: <%= text_field_tag :email %>
-  Password: <%= password_field_tag :password %>
-  <%= submit_tag "Submit" %>
-  <% flash.each do |name, msg| %>
-    <%= content_tag :div, msg, class: "alert alert-info" %>
-  <% end %>
-
-<% end %>
+	<div class="form">
+		<%= form_tag '/login' do %>
+		  <p class ="form-field"> Email: <%= text_field_tag :email%></p>
+		  <p class ="form-field"> Password: <%= password_field_tag :password, :class => "form-field" %></p>
+		  <%= submit_tag "Submit" %>
+		  <% flash.each do |name, msg| %>
+		    <%= content_tag :div, msg, class: "alert alert-info" %>
+			<% end %>
+		<% end %>
+	</div>
+</div>

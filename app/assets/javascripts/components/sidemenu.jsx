@@ -1,8 +1,9 @@
 var SideMenu = React.createClass({
   render: function() {
     return (
-      <div>
-        <p>This is the side menu</p>
+      <div className="sidebar">
+        <p>Add Story</p>
+        <p>My Work</p>
       </div>
     )
   }

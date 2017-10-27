@@ -1,14 +1,16 @@
 class Ticket < ActiveRecord::Base
-	attr_accessor :id, :story_type, :description
-	has_and_belongs_to_many :users
+	before_save :set_default_deadline, :assign_random_requester
 
-	before_create :set_default_deadline
-	validates :story_type,  :inclusion => { :in => [ 'Feature', 'Bug', 'Chore', 'Release'], 
-                          :message => "%{value} is not a valid story type" }
+	private
 
   def set_default_deadline
   	# Sets default deadline randomly within two weeks from when created
     self.deadline = Time.now + (60 * rand(60) * 24 * 7 * 2) 
+  end
+  	# Sets default requester
+  def assign_random_requester
+  	total_users = User.count
+  	self.requester = User.all[rand(total_users)].name
   end
 
 end

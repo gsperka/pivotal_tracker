@@ -13,7 +13,7 @@ User.create(name: 'Wade Davis', email: 'wd@gmail.com', password_digest: User.dig
 User.create(name: 'Kyle Hendricks', email: 'kh@gmail.com', password_digest: User.digest('password5'))
 
 
-Ticket.create(description: "Deploy staging server", story_type: "Release" )
+Ticket.create(description: "Deploy staging server", story_type: "Release")
 Ticket.create(description: "Navbar bleeds off the page")
 Ticket.create(description: "Create Career Cluster survey", story_type: "Feature", points: 7)
 Ticket.create(description: "Write unit tests", story_type: "Chore")

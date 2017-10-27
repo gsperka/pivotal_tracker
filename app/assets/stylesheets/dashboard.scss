@@ -1,0 +1,48 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.login-section {
+  text-align: center;
+  margin-top: 50px;
+}
+
+.form {
+  margin: 0 auto;
+}
+
+.navbar {
+  text-align: right;
+  padding: 5px;
+  background: #256188;
+  color: white;
+
+  p {
+    margin: 0;
+  }
+
+  a {
+    color: white;
+  }
+}
+
+.sidemenu-container {
+  display: inline-block;
+  width: 15%;
+  vertical-align: top;
+  padding-left: 20px;
+}
+
+.content-container {
+  display: inline-block;
+  width: 65%;
+}
+
+.ticket {
+  margin-top: 15px;
+}
+
+.ticket-text {
+  margin: 0;
+}
