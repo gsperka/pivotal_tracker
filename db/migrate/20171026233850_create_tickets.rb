@@ -2,7 +2,7 @@ class CreateTickets < ActiveRecord::Migration
   def change
     create_table :tickets do |t|
       t.string :state, :default => "Unstarted"
-      t.boolean :complete, :default => false
+      t.boolean :completed, :default => false
       t.string :requester
       t.datetime :deadline
       t.string :description

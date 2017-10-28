@@ -12,13 +12,32 @@ User.create(name: 'Jake Arieta', email: 'ja@gmail.com', password_digest: User.di
 User.create(name: 'Wade Davis', email: 'wd@gmail.com', password_digest: User.digest('password4'))
 User.create(name: 'Kyle Hendricks', email: 'kh@gmail.com', password_digest: User.digest('password5'))
 
+def deadline_in_the_past
+	Faker::Date.between(1.year.ago, 10.days.ago)
+end
 
-Ticket.create(description: "Deploy staging server", story_type: "Release")
-Ticket.create(description: "Navbar bleeds off the page")
-Ticket.create(description: "Create Career Cluster survey", story_type: "Feature", points: 7)
-Ticket.create(description: "Write unit tests", story_type: "Chore")
-Ticket.create(description: "Technical debt", story_type: "Chore")
-Ticket.create(description: "Mobile text is not the correct size")
-Ticket.create(description: "Create counselor dashboard", story_type: "Feature", points: 10)
-Ticket.create(description: "Follow up with candidate", story_type: "Chore")
-Ticket.create(description: "Update Python version", story_type: "Feature", points: 15)
+def deadline_in_the_future
+	Faker::Date.forward(rand(20..30))
+end
+
+def deadline_in_current_sprint
+	Faker::Date.between_except(7.days.ago, 7.days.from_now, Date.today)
+end
+
+user_name_array = User.all.each_with_object([]) {|user, user_name_array| user_name_array << user.name}
+state = ["Started", "Unstarted", "Accepted"]
+story_type = ["Release", "Feature", "Chore", "Bug"]
+completed = [true, false]
+
+100.times {
+	random_deadline = [deadline_in_the_past, deadline_in_the_future, deadline_in_current_sprint]
+	Ticket.create(
+		description: Faker::Hacker.say_something_smart,
+		state: state.sample,
+		story_type: story_type.sample,
+		completed: completed.sample,
+		requester: user_name_array.sample,
+		points: rand(21),
+		deadline: random_deadline.sample
+	)
+}

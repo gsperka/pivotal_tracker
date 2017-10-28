@@ -29,9 +29,20 @@ body {
 
 .sidemenu-container {
   display: inline-block;
-  width: 15%;
+  width: 10%;
   vertical-align: top;
-  padding-left: 20px;
+  padding: 10px 20px 0px 0px;
+
+  p {
+    margin: 0;
+    padding: 10px;
+  }
+
+  p:hover {
+    cursor: pointer;
+    background: #256188;
+    color: white;
+  }
 }
 
 .content-container {
@@ -40,9 +51,24 @@ body {
 }
 
 .ticket {
-  margin-top: 15px;
+  padding: 8px;
+  width: 200px;
 }
 
 .ticket-text {
   margin: 0;
+  font-size: 14px;
+  padding: 5px;
+}
+
+.single-ticket-container {
+  display: inline-block;
+  vertical-align: top;
+  border: 1px solid black;
+  margin: 10px 5px;
+  min-height: 300px;
+}
+
+h3 {
+  margin: 15px;
 }

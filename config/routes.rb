@@ -7,6 +7,8 @@ Rails.application.routes.draw do
   post '/login' => 'sessions#create'
   get '/logout' => 'sessions#destroy'
   get '/dashboard' => 'dashboard#index'
+  post '/ticket/:id' => 'tickets#new'
+  get '/ticket/:id' => 'tickets#show'
 
   root 'sessions#new'
 

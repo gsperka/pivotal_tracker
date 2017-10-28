@@ -1,8 +1,2 @@
 <%= render 'navbar' %>
-<div class="sidemenu-container">
-	<%= react_component('SideMenu') %>
-</div>
-<div class="content-container">
-	<%= react_component('Tickets', tickets: @tickets) %>
-	<%= react_component('CurrentUser', tickets: @current_user_tickets) %>
-</div>
+<%= react_component('SideMenu', tickets: @tickets, current_user: @current_user) %>
