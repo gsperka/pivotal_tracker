@@ -3,6 +3,7 @@ class DashboardController < ApplicationController
   
   def index
   	@tickets = Ticket.order(:deadline)
+  	@users = User.all()
   end
 
 end

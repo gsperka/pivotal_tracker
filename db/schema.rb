@@ -22,7 +22,7 @@ ActiveRecord::Schema.define(version: 20171026233850) do
     t.string   "requester"
     t.datetime "deadline"
     t.string   "description"
-    t.text     "owners",      default: ["None"],                 array: true
+    t.string   "owner"
     t.string   "story_type",  default: "Bug"
     t.integer  "points",      default: 0
     t.datetime "created_at",                        null: false

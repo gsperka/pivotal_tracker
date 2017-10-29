@@ -8,10 +8,6 @@ class ApplicationController < ActionController::Base
   end
   helper_method :current_user
 
-  def all_users
-    @all_users = User.all()
-  end
-
   def authorize
     redirect_to '/login' unless current_user
   end

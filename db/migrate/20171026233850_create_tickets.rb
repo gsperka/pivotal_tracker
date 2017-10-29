@@ -6,7 +6,7 @@ class CreateTickets < ActiveRecord::Migration
       t.string :requester
       t.datetime :deadline
       t.string :description
-      t.text  :owners, array: true, default: ["None"]
+      t.string :owner
       t.string :story_type, :default => "Bug"
       t.integer :points, :default => 0
 

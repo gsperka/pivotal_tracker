@@ -24,20 +24,21 @@ def deadline_in_current_sprint
 	Faker::Date.between_except(7.days.ago, 7.days.from_now, Date.today)
 end
 
-user_name_array = User.all.each_with_object([]) {|user, user_name_array| user_name_array << user.name}
 state = ["Started", "Unstarted", "Accepted"]
 story_type = ["Release", "Feature", "Chore", "Bug"]
 completed = [true, false]
 
 100.times {
 	random_deadline = [deadline_in_the_past, deadline_in_the_future, deadline_in_current_sprint]
+	user_name_array = User.all.each_with_object([]) {|user, user_name_array| user_name_array << user.name}.shuffle
 	Ticket.create(
 		description: Faker::Hacker.say_something_smart,
 		state: state.sample,
 		story_type: story_type.sample,
 		completed: completed.sample,
-		requester: user_name_array.sample,
+		requester: user_name_array.pop,
 		points: rand(21),
-		deadline: random_deadline.sample
+		deadline: random_deadline.sample,
+		owner: user_name_array.pop
 	)
 }

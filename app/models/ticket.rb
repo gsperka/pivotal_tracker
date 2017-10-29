@@ -1,5 +1,6 @@
 class Ticket < ActiveRecord::Base
 	before_save :check_if_completed
+	has_and_belongs_to_many :users
 
 	private
 
