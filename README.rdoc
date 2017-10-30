@@ -1,2 +1,56 @@
+== Challenge
+1. Display work items for current sprint
+2. Display work status of said work items
+3. Display who is assigned
+4. If work item is a feature, display points assigned
 
+== Challenge
+
+Issues with current Sinatra app:
+- Passwords are not saved with encryption
+- There is no front end / user interface
+- Ticket model does not exist
+- Little to no functionality 
+- Can not create new tickets
+
+=== Staging
+
+
+
+=== Instructions
+
+To successfully run this application:
+
+Open the terminal and type:
+
+* <tt>cd Desktop</tt>
+* <tt>git clone https://github.com/gsperka/pivotal_tracker.git</tt>
+* <tt>cd pivotal_tracker</tt>
+
+Once inside this repository, please run the following commands:
+
+* <tt>bundle install</tt>
+* <tt>rake db:create</tt>
+* <tt>rake db:migrate</tt>
+* <tt>rake db:seed</tt>
+* <tt>rails s</tt>
+
+Visit: <tt>localhost:3000</tt>
+Use kb@email to sign in with the password of "password1"
+
+==== Assumptions that were made creating this application: 
+
+* Today is the current start of a two week sprint
+* If a ticket is completed, it must have a status of "Accepted" (and not "Unstarted")
+* The requester can not also be the owner
+
+=== Tests:
+
+To run all tests created, type <tt>rspec</tt> from the root
+
+=== Stack:
+
+* Ruby on Rails for the back end / login / session management
+* React Rails for the front end
+* Postgres for the database
 
