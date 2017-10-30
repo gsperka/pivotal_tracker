@@ -4,9 +4,7 @@
 3. Display who is assigned
 4. If work item is a feature, display points assigned
 
-== Challenge
-
-Issues with current Sinatra app:
+== Issues with Sinatra App
 - Passwords are not saved with encryption
 - There is no front end / user interface
 - Ticket model does not exist
@@ -15,7 +13,7 @@ Issues with current Sinatra app:
 
 === Staging
 
-https://mysterious-bayou-41117.herokuapp.com/
+https://mysterious-bayou-41117.herokuapp.com
 
 === Instructions
 
@@ -36,6 +34,7 @@ Once inside this repository, please run the following commands:
 * <tt>rails s</tt>
 
 Visit: <tt>localhost:3000</tt>
+
 Use kb@email to sign in with the password of "password1"
 
 ==== Assumptions that were made creating this application: 
@@ -46,7 +45,7 @@ Use kb@email to sign in with the password of "password1"
 
 === Tests:
 
-To run all tests created, type <tt>rspec</tt> from the root
+To run tests created, type <tt>rspec</tt> from the root
 
 === Stack:
 
